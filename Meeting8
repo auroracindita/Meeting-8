@@ -1,0 +1,128 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct student {
+    long long nisn;
+    string name;
+    int value;
+};
+
+int main() {
+    student data[7] = {{9960312699, "Handi Ramadhan", 90},
+                       {9963959682, "Rio Alfandra", 55},
+                       {9950310962, "Ronaldo Valentino Uneputty", 80},
+                       {9970272750, "Achmad Yaumil Fadjri R.", 60},
+                       {9970293945, "Alivia Rahma Pramesti", 70},
+                       {9952382180, "Ari Lutfianto", 65},
+                       {9965653989, "Arief Budiman", 60}};
+
+    int dataSize = sizeof(data) / sizeof(data[0]);
+
+    // NISN sorting (descending) - insertion sort
+    for(int i = 1; i < dataSize; i++) {
+        int j = i - 1;
+        long long temp = data[i].nisn;
+        string temp2 = data[i].name;
+        int temp3 = data[i].value;
+        while(j >= 0 && data[j].nisn < temp) {
+            data[j + 1] = data[j];
+            j--;
+        }
+        data[j + 1].nisn = temp;
+        data[j + 1].name = temp2;
+        data[j + 1].value = temp3;
+    }
+
+    cout << "NISN insertion method" << '\n';
+    for(int i = 0; i < dataSize; i++) {
+        cout << data[i].nisn << ' ' << data[i].name << ' ' << data[i].value << '\n';
+    }
+    cout << '\n';
+
+    // Selection sort (descending) - NISN
+    for (int i = 0; i < dataSize - 1; i++) {
+        int maxIdx = i;
+        for (int j = i + 1; j < dataSize; j++) {
+            if (data[j].nisn > data[maxIdx].nisn) {
+                maxIdx = j;
+            }
+        }
+        swap(data[i], data[maxIdx]);
+    }
+
+    cout << "NISN selection method" << '\n';
+    for(int i = 0; i < dataSize; i++) {
+        cout << data[i].nisn << ' ' << data[i].name << ' ' << data[i].value << '\n';
+    }
+    cout << '\n';
+
+    // Bubble sort (descending) - NISN
+    for(int i = 0; i < dataSize - 1; i++) {
+        for(int j = 0; j < dataSize - i - 1; j++) {
+            if(data[j].nisn < data[j + 1].nisn) {
+                swap(data[j], data[j + 1]);
+            }
+        }
+    }
+
+    cout << "NISN Bubble method" << '\n';
+    for(int i = 0; i < dataSize; i++) {
+        cout << data[i].nisn << ' ' << data[i].name << ' ' << data[i].value << '\n';
+    }
+    cout << '\n';
+
+    // Value sorting - Insertion sort (descending)
+    for(int i = 1; i < dataSize; i++) {
+        int j = i - 1;
+        long long tempNISN = data[i].nisn;
+        string tempName = data[i].name;
+        int tempValue = data[i].value;
+        while(j >= 0 && data[j].value < tempValue) {
+            data[j + 1] = data[j];
+            j--;
+        }
+        data[j + 1].nisn = tempNISN;
+        data[j + 1].name = tempName;
+        data[j + 1].value = tempValue;
+    }
+
+    cout << "Value insertion method" << '\n';
+    for(int i = 0; i < dataSize; i++) {
+        cout << data[i].nisn << ' ' << data[i].name << ' ' << data[i].value << '\n';
+    }
+    cout << '\n';
+
+    // Selection sort (descending) - Value
+    for (int i = 0; i < dataSize - 1; i++) {
+        int maxIdx = i;
+        for (int j = i + 1; j < dataSize; j++) {
+            if (data[j].value > data[maxIdx].value) {
+                maxIdx = j;
+            }
+        }
+        swap(data[i], data[maxIdx]);
+    }
+
+    cout << "Value selection method" << '\n';
+    for(int i = 0; i < dataSize; i++) {
+        cout << data[i].nisn << ' ' << data[i].name << ' ' << data[i].value << '\n';
+    }
+    cout << '\n';
+
+    // Bubble sort (descending) - Value
+    for(int i = 0; i < dataSize - 1; i++) {
+        for(int j = 0; j < dataSize - i - 1; j++) {
+            if(data[j].value < data[j + 1].value) {
+                swap(data[j], data[j + 1]);
+            }
+        }
+    }
+
+    cout << "Value Bubble method" << '\n';
+    for(int i = 0; i < dataSize; i++) {
+        cout << data[i].nisn << ' ' << data[i].name << ' ' << data[i].value << '\n';
+    }
+
+    return 0;
+}

@@ -1,0 +1,50 @@
+//Problem 1
+Updated Student Data:
+NISN: 9960312699, Name: Handi Ramadhan, Value: 90
+NISN: 9963959682, Name: Rio Alfandra, Value: 55
+NISN: 9950310962, Name: Ronaldo Valentino Uneputty, Value: 80
+NISN: 9970272750, Name: Joko, Value: 60
+NISN: 9970293945, Name: Alivia Rahma Pramesti, Value: 70
+NISN: 9952382180, Name: Ari Lutfianto, Value: 65
+NISN: 9965653989, Name: Joko, Value: 60
+
+
+//Problem 2
+Updated Student Data:
+NISN: 9960312699, Name: Handi Ramadhan, Value: 90
+NISN: 9963959682, Name: Rio Alfandra, Value: 55
+NISN: 9950310962, Name: Ronaldo Valentino Uneputty, Value: 80
+NISN: 9970272750, Name: Joko, Value: 60
+NISN: 9970293945, Name: Alivia Rahma Pramesti, Value: 70
+NISN: 9952382180, Name: Ari Lutfianto, Value: 65
+NISN: 9965653989, Name: Joko, Value: 60
+
+//Problem 3
+Data sorted by NISN (Descending Order):
+9970293945 Alivia Rahma Pramesti 70
+9970272750 Achmad Yaumil Fadjri R. 60
+9965653989 Arief Budiman 60
+9963959682 Rio Alfandra 55
+9960312699 Handi Ramadhan 90
+9952382180 Ari Lutfianto 65
+9950310962 Ronaldo Valentino Uneputty 80
+
+Value for NISN 9950310962: 80
+
+Data sorted by Value (Descending Order):
+9960312699 Handi Ramadhan 90
+9950310962 Ronaldo Valentino Uneputty 80
+9970293945 Alivia Rahma Pramesti 70
+9952382180 Ari Lutfianto 65
+9970272750 Joko 60
+9965653989 Joko 60
+9963959682 Rio Alfandra 55
+
+Sequential Search and Update Results:
+NISN: 9960312699, Name: Handi Ramadhan, Value: 90
+NISN: 9963959682, Name: Rio Alfandra, Value: 55
+NISN: 9950310962, Name: Ronaldo Valentino Uneputty, Value: 80
+NISN: 9970272750, Name: Joko, Value: 60
+NISN: 9970293945, Name: Alivia Rahma Pramesti, Value: 70
+NISN: 9952382180, Name: Ari Lutfianto, Value: 65
+NISN: 9965653989, Name: Joko, Value: 60

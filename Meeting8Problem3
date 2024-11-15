@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Student {
+    long long nisn;
+    string name;
+    int value;
+};
+
+int main() {
+    // Initialize student data
+    Student data[7] = {
+        {9960312699, "Handi Ramadhan", 90},
+        {9963959682, "Rio Alfandra", 55},
+        {9950310962, "Ronaldo Valentino Uneputty", 80},
+        {9970272750, "Achmad Yaumil Fadjri R.", 60},
+        {9970293945, "Alivia Rahma Pramesti", 70},
+        {9952382180, "Ari Lutfianto", 65},
+        {9965653989, "Arief Budiman", 60}
+    };
+
+    // Sequential search to find and update students with value 60
+    for (int i = 0; i < 7; i++) {
+        if (data[i].value == 60) {
+            data[i].name = "Joko";  // Change name to Joko
+        }
+    }
+
+    // Display the updated student data
+    cout << "Updated Student Data:" << endl;
+    for (int i = 0; i < 7; i++) {
+        cout << "NISN: " << data[i].nisn << ", Name: " << data[i].name << ", Value: " << data[i].value << endl;
+    }
+
+    return 0;
+}

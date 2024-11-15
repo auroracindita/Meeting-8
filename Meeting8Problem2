@@ -1,0 +1,78 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Student {
+    long long nisn;
+    string name;
+    int value;
+};
+
+// Function prototypes
+void insertionSort(Student data[], int size);
+int binarySearch(Student data[], int size, long long targetNISN);
+void printData(Student data[], int size);
+
+int main() {
+    Student data[7] = {
+        {9960312699, "Handi Ramadhan", 90},
+        {9963959682, "Rio Alfandra", 55},
+        {9950310962, "Ronaldo Valentino Uneputty", 80},
+        {9970272750, "Achmad Yaumil Fadjri R.", 60},
+        {9970293945, "Alivia Rahma Pramesti", 70},
+        {9952382180, "Ari Lutfianto", 65},
+        {9965653989, "Arief Budiman", 60}
+    };
+    int size = sizeof(data) / sizeof(data[0]);
+
+    // Sort by NISN in descending order using insertion sort
+    insertionSort(data, size);
+    cout << "Data sorted by NISN (Descending Order):\n";
+    printData(data, size);
+
+    // Perform binary search for NISN 9950310962
+    long long targetNISN = 9950310962;
+    int index = binarySearch(data, size, targetNISN);
+    if (index != -1) {
+        cout << "Value for NISN " << targetNISN << ": " << data[index].value << endl;
+    } else {
+        cout << "NISN " << targetNISN << " not found.\n";
+    }
+
+    return 0;
+}
+
+// Insertion sort function to sort by NISN in descending order
+void insertionSort(Student data[], int size) {
+    for (int i = 1; i < size; i++) {
+        Student temp = data[i];
+        int j = i - 1;
+        while (j >= 0 && data[j].nisn < temp.nisn) {
+            data[j + 1] = data[j];
+            j--;
+        }
+        data[j + 1] = temp;
+    }
+}
+
+// Binary search function to find a student by NISN
+int binarySearch(Student data[], int size, long long targetNISN) {
+    int left = 0, right = size - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (data[mid].nisn == targetNISN)
+            return mid;  // Found target NISN
+        else if (data[mid].nisn < targetNISN)
+            right = mid - 1;  // Look in the left half
+        else
+            left = mid + 1;   // Look in the right half
+    }
+    return -1; // NISN not found
+}
+
+// Print function to display student data
+void printData(Student data[], int size) {
+    for (int i = 0; i < size; i++) {
+        cout << data[i].nisn << " " << data[i].name << " " << data[i].value << endl;
+    }
+}
